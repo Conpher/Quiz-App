@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">HonoursProjectApplication</string>
+    //Login and Register Page
+    <string name="title">Quizzard</string>
+    <string name="mail_hint">E-Mail Address</string>
+    <string name="pwd_hint">Password</string>
+    <string name="login_btn">Login</string>
+    <string name="create_account_btn">Create Account</string>
+    <string name="sign_up_link">Sign Up Now!</string>
+    <string name="login_in_link">Login Now!</string>
+    <string name="reset_pwd_link">Reset Password?</string>
+    //Forgotten Password Page
+    <string name="forgot_pwd_lbl">Forgotten Password?</string>
+    <string name="forgot_pwd_msg">Please enter the correct registered E-mail ID associated with this account:</string>
+    <string name="change_pwd_btn">Reset Password</string>
+    <string name="back_btn"><![CDATA[<< Back]]></string>
+
+</resources>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:theme="@android:style/Theme.Holo.NoActionBar"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/radiant_red"
+    tools:context=".RegisterActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="350dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:src="@drawable/quizzard_logo" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingRight="50dp"
+        android:paddingLeft="50dp"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/mailCreate"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:paddingStart="10dp"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textColorHint="@color/white"
+            android:textColor="@color/white"
+            android:hint="@string/mail_hint"
+            android:inputType="textEmailAddress"
+            android:background="@drawable/shape_edit_text"/>
+
+        <EditText
+            android:id="@+id/pwdCreate"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:paddingStart="10dp"
+            android:layout_marginTop="15dp"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textColorHint="@color/white"
+            android:textColor="@color/white"
+            android:hint="@string/pwd_hint"
+            android:inputType="textPassword"
+            android:background="@drawable/shape_edit_text"/>
+
+        <Button
+            android:id="@+id/createButton"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/shape_btn_confirm"
+            android:text="@string/create_account_btn"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/loginLink"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/raisin_black"
+                android:background="@android:color/transparent"
+                android:textAllCaps="false"
+                android:text="@string/login_in_link"/>
+
+            <Button
+                android:id="@+id/btnResetPwdLink"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:textColor="@color/white"
+                android:background="@android:color/transparent"
+                android:textAllCaps="false"
+                android:text="@string/reset_pwd_link"/>
+        </LinearLayout>
+        <ProgressBar
+            android:id="@+id/barProgress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:visibility="gone"/>
+    </LinearLayout>
+</LinearLayout>
