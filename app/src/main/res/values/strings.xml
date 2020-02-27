@@ -9,6 +9,7 @@
     <string name="sign_up_link">Sign Up Now!</string>
     <string name="login_in_link">Login Now!</string>
     <string name="reset_pwd_link">Reset Password?</string>
+    <string name="sourcetree_branch_example">New Branch for Register</string>
     //Forgotten Password Page
     <string name="forgot_pwd_lbl">Forgotten Password?</string>
     <string name="forgot_pwd_msg">Please enter the correct registered E-mail ID associated with this account:</string>
