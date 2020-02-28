@@ -56,12 +56,13 @@
             android:background="@drawable/shape_edit_text"/>
 
         <Button
-            android:id="@+id/createButton"
+            android:id="@+id/createBtn"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="50dp"
             android:background="@drawable/shape_btn_confirm"
-            android:text="@string/create_account_btn"/>
+            android:text="@string/create_account_btn"
+            android:textColor="@color/raisin_black"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -70,7 +71,7 @@
             android:gravity="center">
 
             <Button
-                android:id="@+id/loginLink"
+                android:id="@+id/loginLinkBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/raisin_black"
@@ -79,7 +80,7 @@
                 android:text="@string/login_in_link"/>
 
             <Button
-                android:id="@+id/btnResetPwdLink"
+                android:id="@+id/resetPwdLinkBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
@@ -88,16 +89,6 @@
                 android:textAllCaps="false"
                 android:text="@string/reset_pwd_link"/>
         </LinearLayout>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/sourcetree_branch_example"
-            android:textColor="@color/white"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/sourcetree_branch_example"
-            android:textColor="@color/white"/>
         <ProgressBar
             android:id="@+id/barProgress"
             android:layout_width="wrap_content"
