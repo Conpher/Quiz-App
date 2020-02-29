@@ -21,7 +21,7 @@ public class RegisterActivity extends AppCompatActivity {
     //Declare instance of FirebaseAuth
     private FirebaseAuth mAuth;
     //Declare instance of type objects
-    private EditText inputmail, inputPwd;
+    private EditText inputMail, inputPwd;
     private Button btnSignUp, btnSignIn, btnResetPwd;
     private ProgressBar progressBar;
 
@@ -34,7 +34,7 @@ public class RegisterActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
 
         //Link objects to XML data
-        inputmail = (EditText) findViewById(R.id.mailCreate);
+        inputMail = (EditText) findViewById(R.id.mailCreate);
         inputPwd = (EditText) findViewById(R.id.pwdCreate);
         btnSignUp = (Button) findViewById(R.id.createBtn);
         btnSignIn = (Button) findViewById(R.id.loginLinkBtn);
@@ -48,7 +48,7 @@ public class RegisterActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 //Parse email and password to a String
-                String mail = inputmail.getText().toString().trim();
+                String mail = inputMail.getText().toString().trim();
                 String pwd = inputPwd.getText().toString().trim();
 
                 //Make if statements to set conditions for email and password
@@ -101,8 +101,6 @@ public class RegisterActivity extends AppCompatActivity {
                                     startActivity(new Intent(RegisterActivity.this, MainActivity.class));
                                     finish();
                                 }
-
-
                             }
                         });
 
