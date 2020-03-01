@@ -1,21 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">HonoursProjectApplication</string>
-    //Login and Register Page
-    <string name="title">Quizzard</string>
-    <string name="mail_hint">E-Mail Address</string>
-    <string name="pwd_hint">Password</string>
-    <string name="login_btn">Sign-In</string>
-    <string name="create_account_btn">Create Account</string>
-    <string name="sign_up_link">Sign-Up Now!</string>
-    <string name="login_in_link">Sign-In Now!</string>
-    <string name="reset_pwd_link">Reset Password?</string>
-    //Forgotten Password Page
-    <string name="forgot_pwd_lbl">Forgotten Password?</string>
-    <string name="forgot_pwd_msg">Please enter the correct registered E-mail ID associated with this account:</string>
-    <string name="change_pwd_btn">Reset Password</string>
-    <string name="back_btn"><![CDATA[<< Back]]></string>
-    //Authentication
-    <string name="min_pwd_msg">Password is too short, please enter minimum of 6 characters:</string>
-    <string name="auth_fail_msg">Authentication error, please check E-mail and Password or click Sign-In</string>
-
+    <string name="app_name">Quizzard</string>
+    <string name="minimum_password">Password too short, enter minimum of 6 characters!</string>
+    <string name="auth_failed">Authentication failed, check your E-Mail and Password or Sign-Up.</string>
+    <string name="hint_email">E-Mail</string>
+    <string name="hint_password">Password</string>
+    <string name="btn_sign_up">Sign-Up</string>
+    <string name="btn_login">Login</string>
+    <string name="txt_link_sign_up">Dont have an account? Sign-Up</string>
+    <string name="txt_link_login">Already have an account? Login</string>
+    <string name="btn_back"><![CDATA[<< Back]]></string>
+    <string name="btn_sign_out">Sign-Out</string>
 </resources>
