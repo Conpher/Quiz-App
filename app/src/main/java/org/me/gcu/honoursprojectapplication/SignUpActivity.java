@@ -99,7 +99,10 @@ public class SignUpActivity extends AppCompatActivity {
                         //If account is created successfully display message to the user and bring to LoginActivity.
                         if (task.isSuccessful()) {
                             Toast.makeText(getApplicationContext(), "Account created successfully", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(SignUpActivity.this, MainActivity.class));
+                            Intent intent = new Intent(SignUpActivity.this, MainActivity.class);
+                            //Drop previous activities so user cannot go back to Sign-Up screen.
+                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            startActivity(intent);
 
                             //Else check if email has already been registered.
                         }else{
