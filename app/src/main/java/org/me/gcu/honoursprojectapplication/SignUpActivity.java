@@ -16,6 +16,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 
 public class SignUpActivity extends AppCompatActivity {
 
@@ -91,11 +92,24 @@ public class SignUpActivity extends AppCompatActivity {
                 mAuth.createUserWithEmailAndPassword(mail, pwd).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
+
                         //Hide visibility of progress bar once event has been completed.
                         progressBar.setVisibility(View.GONE);
-                        //If account is created successfully display message to the user.
-                        if (task.isSuccessful()){
-                            Toast.makeText(getApplicationContext(), "Account Created Successfully",Toast.LENGTH_SHORT).show();
+
+                        //If account is created successfully display message to the user and bring to LoginActivity.
+                        if (task.isSuccessful()) {
+                            Toast.makeText(getApplicationContext(), "Account created successfully", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(SignUpActivity.this, MainActivity.class));
+
+                            //Else check if email has already been registered.
+                        }else{
+                            if (task.getException() instanceof FirebaseAuthUserCollisionException) {
+                                Toast.makeText(getApplicationContext(), "You are already registered", Toast.LENGTH_SHORT).show();
+
+                                //Else display error msg and ask user to try again.
+                            } else {
+                                Toast.makeText(getApplicationContext(), "Error, try again...", Toast.LENGTH_SHORT).show();
+                            }
                         }
                     }
                 });
