@@ -23,7 +23,6 @@ public class MainActivity extends AppCompatActivity {
     private EditText inputMail, inputPwd;
     private Button btnLogin;
     private TextView txtViewSignUp;
-    private ProgressBar progressBar;
     private FirebaseAuth mAuth;
 
     @Override
@@ -81,23 +80,18 @@ public class MainActivity extends AppCompatActivity {
                     return;
                 }
 
-                //Progress bar should become visible when user has clicked the "Login" button.
-                progressBar.setVisibility(View.VISIBLE);
-
                 mAuth.signInWithEmailAndPassword(mail, pwd).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
 
-                        //Hide visibility of progress bar once event has been completed.
-                        progressBar.setVisibility(View.GONE);
-
                         if (task.isSuccessful()){
+                            finish();
                             Intent intent = new Intent(MainActivity.this, CategoriesActivity.class);
                             //Drop previous activities so user cannot go back to Sign-Up screen.
                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             startActivity(intent);
                         } else {
-                            Toast.makeText(getApplicationContext(), task.getException().getMessage(),Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), task.getException().getMessage(),Toast.LENGTH_LONG).show();
                         }
                     }
                 });

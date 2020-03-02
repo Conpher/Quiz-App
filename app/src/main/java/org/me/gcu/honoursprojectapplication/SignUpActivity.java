@@ -98,6 +98,7 @@ public class SignUpActivity extends AppCompatActivity {
 
                         //If account is created successfully display message to the user and bring to LoginActivity.
                         if (task.isSuccessful()) {
+                            finish();
                             Toast.makeText(getApplicationContext(), "Account created successfully", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(SignUpActivity.this, MainActivity.class);
                             //Drop previous activities so user cannot go back to Sign-Up screen.
