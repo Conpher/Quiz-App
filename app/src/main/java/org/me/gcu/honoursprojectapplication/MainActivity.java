@@ -9,7 +9,6 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -80,13 +79,14 @@ public class MainActivity extends AppCompatActivity {
                     return;
                 }
 
+                //Authentication, check user has entered the correct details for email and pwd.
                 mAuth.signInWithEmailAndPassword(mail, pwd).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
 
                         if (task.isSuccessful()){
                             finish();
-                            Intent intent = new Intent(MainActivity.this, CategoriesActivity.class);
+                            Intent intent = new Intent(MainActivity.this, PlayActivity.class);
                             //Drop previous activities so user cannot go back to Sign-Up screen.
                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             startActivity(intent);

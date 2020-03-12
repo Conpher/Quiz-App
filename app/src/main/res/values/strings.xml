@@ -5,10 +5,15 @@
     <string name="auth_failed">Authentication failed, check your E-Mail and Password or Sign-Up.</string>
     <string name="hint_email">E-Mail</string>
     <string name="hint_password">Password</string>
-    <string name="btn_sign_up">Sign-Up</string>
-    <string name="btn_login">Login</string>
+    <string name="btn_sign_up">SIGN-UP</string>
+    <string name="btn_login">LOGIN</string>
     <string name="txt_link_sign_up">Dont have an account? Sign-Up</string>
     <string name="txt_link_login">Already have an account? Login</string>
     <string name="btn_back"><![CDATA[<< Back]]></string>
     <string name="btn_sign_out">Sign-Out</string>
+    <string name="btn_play">PLAY!</string>
+    <string name="txt_view_welcome">Welcome to Quizzard! Please hit the Play Button to start the Quiz:</string>
+    <string name="txt_view_pwd_reset">Reset Password?</string>
+    <string name="txt_view_question_placement">This is where the question will be placed. Answer by pressing one of the buttons below:</string>
+    <string name="btn_exit">EXIT</string>
 </resources>
