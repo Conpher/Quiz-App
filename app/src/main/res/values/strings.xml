@@ -16,4 +16,7 @@
     <string name="txt_view_pwd_reset">Reset Password?</string>
     <string name="txt_view_question_placement">This is where the question will be placed. Answer by pressing one of the buttons below:</string>
     <string name="btn_exit">EXIT</string>
+    <string name="txt_view_total_questions">Total Questions:</string>
+    <string name="txt_view_correct_answers">Correct Answers:</string>
+    <string name="txt_view_incorrect_answers">Incorrect Answers</string>
 </resources>

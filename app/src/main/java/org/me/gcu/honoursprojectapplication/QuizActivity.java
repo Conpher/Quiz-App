@@ -3,8 +3,10 @@ package org.me.gcu.honoursprojectapplication;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
@@ -285,10 +287,6 @@ public class QuizActivity extends AppCompatActivity {
                             }
                         }
                     });
-
-
-
-
                 }
 
                 @Override
@@ -297,5 +295,57 @@ public class QuizActivity extends AppCompatActivity {
                 }
             });
         }
+    }
+
+    //Create timer method this will be used to create the 30 second timer in the quiz.
+    public void timeLimiter(int seconds, final TextView txtTimer)
+    {
+        new CountDownTimer(seconds * 1000 + 1000, 1000)
+        {
+            //Use method onTick to calculate the milliseconds into seconds and minutes.
+            @Override
+            public void onTick(long millisUntilFinished)
+            {
+                int seconds = (int) (millisUntilFinished / 1000);
+                int minutes = seconds / 60;
+                seconds = seconds % 60;
+                txtTimer.setText(String.format("%02d", minutes) + ":" + String.format("%02d", seconds));
+            }
+
+            //Use method quizComplete to display total number of questions answered and how many they got correct and incorrect.
+            @Override
+            public void onFinish()
+            {
+                txtTimer.setText("Quiz Finished!");
+                Intent intent = new Intent(QuizActivity.this, ScoreboardActivity.class);
+                intent.putExtra("Total", String.valueOf(total));
+                intent.putExtra("Correct Answers", String.valueOf(correct));
+                intent.putExtra("Incorrect Answers", String.valueOf(incorrect));
+                startActivity(intent);
+            }
+
+            //Use method eachTick to calculate the milliseconds into seconds and minutes.
+            public void eachTick (long milliSecFin)
+            {
+                int seconds = (int) (milliSecFin / 1000);
+                int minutes = seconds / 60;
+                seconds = seconds % 60;
+                txtTimer.setText(String.format("%02d", minutes) + ":" + String.format("%02d", seconds));
+            }
+
+            //Use method quizComplete to display total number of questions answered and how many they got correct and incorrect.
+            public void quizComplete()
+            {
+                txtTimer.setText("Quiz Finished!");
+                Intent intent = new Intent(QuizActivity.this, ScoreboardActivity.class);
+                intent.putExtra("Total", String.valueOf(total));
+                intent.putExtra("Correct Answers", String.valueOf(correct));
+                intent.putExtra("Incorrect Answers", String.valueOf(incorrect));
+                startActivity(intent);
+
+            }
+
+        }.start();
+
     }
 }
