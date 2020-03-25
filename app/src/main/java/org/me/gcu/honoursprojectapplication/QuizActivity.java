@@ -25,7 +25,7 @@ public class QuizActivity extends AppCompatActivity {
     Button btnOne, btnTwo, btnThree, btnFour;
     TextView txtViewTimer, txtViewQuestion;
     DatabaseReference reference;
-    int total = 1;
+    int total = 0;
     int correct = 0;
     int incorrect = 0;
 
@@ -43,16 +43,25 @@ public class QuizActivity extends AppCompatActivity {
         txtViewTimer = findViewById(R.id.timer_txt_view);
         txtViewQuestion = findViewById(R.id.question_txt_view);
 
-        //Method called updateQuestion.
+        //Call method updateQuestion.
         updateQuestion();
+
+        //Call method timeLimiter.
+        timeLimiter(60, txtViewTimer);
 
     }
 
     private void updateQuestion() {
 
-        //If less than set amount of questions go straight to the result activity.
+        //If all questions have been answered or timer runs out go straight to ScoreboardActivity.
         total++;
         if (total > 30){
+            Intent newIntent = new Intent(QuizActivity.this, ScoreboardActivity.class);
+            newIntent.putExtra("Total", String.valueOf(total));
+            newIntent.putExtra("Correctly Answers", String.valueOf(correct));
+            newIntent.putExtra("Incorrect Answers",String.valueOf(incorrect));
+            startActivity(newIntent);
+            finish();
         //Else read questions from the database and start the quiz.
         }else {
             reference = FirebaseDatabase.getInstance().getReference().child("Questions").child(String.valueOf(total));
@@ -92,6 +101,7 @@ public class QuizActivity extends AppCompatActivity {
                             }
                             //Else if answer is incorrect change it to red #EC0B43 and find the correct answer and change it to green #1B998B
                             else {
+                                //Create message for incorrect answer.
                                 Toast.makeText(getApplicationContext(),"Incorrect Answer",Toast.LENGTH_SHORT).show();
                                 incorrect++;
                                 btnOne.setBackgroundColor(Color.parseColor("#EC0B43"));
@@ -146,6 +156,7 @@ public class QuizActivity extends AppCompatActivity {
                             }
                             //Else if answer is incorrect change it to red #EC0B43 and find the correct answer and change it to green #1B998B
                             else {
+                                //Create message for incorrect answer.
                                 Toast.makeText(getApplicationContext(),"Incorrect Answer",Toast.LENGTH_SHORT).show();
                                 incorrect++;
                                 btnTwo.setBackgroundColor(Color.parseColor("#EC0B43"));
@@ -200,7 +211,7 @@ public class QuizActivity extends AppCompatActivity {
                             }
                             //Else if answer is incorrect change it to red #EC0B43 and find the correct answer and change it to green #1B998B
                             else {
-                                //Create message for incorrect an
+                                //Create message for incorrect answer.
                                 Toast.makeText(getApplicationContext(),"Incorrect Answer",Toast.LENGTH_SHORT).show();
                                 incorrect++;
                                 btnThree.setBackgroundColor(Color.parseColor("#EC0B43"));
@@ -312,16 +323,17 @@ public class QuizActivity extends AppCompatActivity {
                 txtTimer.setText(String.format("%02d", minutes) + ":" + String.format("%02d", seconds));
             }
 
-            //Use method quizComplete to display total number of questions answered and how many they got correct and incorrect.
+            //Use method onFinish to display total number of questions answered and how many they got correct and incorrect when timer ends.
             @Override
             public void onFinish()
             {
-                txtTimer.setText("Quiz Finished!");
+                txtTimer.setText("Time Up!");
                 Intent intent = new Intent(QuizActivity.this, ScoreboardActivity.class);
                 intent.putExtra("Total", String.valueOf(total));
                 intent.putExtra("Correct Answers", String.valueOf(correct));
                 intent.putExtra("Incorrect Answers", String.valueOf(incorrect));
                 startActivity(intent);
+                finish();
             }
 
             //Use method eachTick to calculate the milliseconds into seconds and minutes.
@@ -333,15 +345,16 @@ public class QuizActivity extends AppCompatActivity {
                 txtTimer.setText(String.format("%02d", minutes) + ":" + String.format("%02d", seconds));
             }
 
-            //Use method quizComplete to display total number of questions answered and how many they got correct and incorrect.
+            //Use method quizComplete to display total number of questions answered and how many they got correct and incorrect once all questions have been answered.
             public void quizComplete()
             {
-                txtTimer.setText("Quiz Finished!");
+                txtTimer.setText("Finished!");
                 Intent intent = new Intent(QuizActivity.this, ScoreboardActivity.class);
                 intent.putExtra("Total", String.valueOf(total));
                 intent.putExtra("Correct Answers", String.valueOf(correct));
                 intent.putExtra("Incorrect Answers", String.valueOf(incorrect));
                 startActivity(intent);
+                finish();
 
             }
 

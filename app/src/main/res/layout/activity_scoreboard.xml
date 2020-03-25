@@ -25,6 +25,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:orientation="horizontal"
         android:paddingLeft="50dp"
         android:paddingRight="50dp">
@@ -34,18 +35,20 @@
             android:layout_height="wrap_content"
             android:text="@string/txt_view_total_questions"
             android:textColor="@color/white"
-            android:textStyle="bold">
+            android:textStyle="bold"
+            android:textSize="20dp">
         </TextView>
 
         <TextView
+            android:id="@+id/total_question_txt_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="100dp"
             android:text="A"
             android:textColor="@color/white"
-            android:textStyle="bold">
+            android:textStyle="bold"
+            android:textSize="20dp">
         </TextView>
-
     </LinearLayout>
 
     <LinearLayout
@@ -58,20 +61,78 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@strtxt"
+            android:text="@string/txt_view_correct_answers"
+            android:layout_marginTop="10dp"
             android:textColor="@color/white"
-            android:textStyle="bold">
+            android:textStyle="bold"
+            android:textSize="20dp">
         </TextView>
+
+        <TextView
+            android:id="@+id/correct_answers_txt_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="93dp"
+            android:layout_marginTop="10dp"
+            android:text="B"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="20dp">
+        </TextView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="50dp"
+        android:paddingRight="50dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="100dp"
-            android:text="B"
+            android:text="@string/txt_view_incorrect_answers"
+            android:layout_marginTop="10dp"
             android:textColor="@color/white"
-            android:textStyle="bold">
+            android:textStyle="bold"
+            android:textSize="20dp">
         </TextView>
 
+        <TextView
+            android:id="@+id/incorrect_answers_txt_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="78dp"
+            android:layout_marginTop="10dp"
+            android:text="C"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="20dp">
+        </TextView>
     </LinearLayout>
+
+    <Button
+        android:id="@+id/exit_scoreboard_btn"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="50dp"
+        android:background="@color/white"
+        android:text="@string/btn_exit"
+        android:textColor="@color/raisin_black">
+    </Button>
+
+    <Button
+        android:id="@+id/sign_out_scoreboard_btn"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/brilliant_azure"
+        android:text="@string/btn_sign_out"
+        android:textColor="@color/raisin_black">
+    </Button>
 
 </LinearLayout>
