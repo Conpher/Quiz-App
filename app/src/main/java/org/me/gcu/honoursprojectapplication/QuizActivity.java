@@ -22,7 +22,7 @@ import com.google.firebase.database.ValueEventListener;
 public class QuizActivity extends AppCompatActivity {
 
 
-    Button btnOne, btnTwo, btnThree, btnFour;
+    Button btnOne, btnTwo, btnThree, btnFour, btnExit;
     TextView txtViewTimer, txtViewQuestion;
     DatabaseReference reference;
     int total = 0;
@@ -39,6 +39,7 @@ public class QuizActivity extends AppCompatActivity {
         btnTwo = findViewById(R.id.answer_btn_two);
         btnThree = findViewById(R.id.answer_btn_three);
         btnFour = findViewById(R.id.answer_btn_four);
+        btnExit = (Button) findViewById(R.id.exit_quiz_btn);
 
         txtViewTimer = findViewById(R.id.timer_txt_view);
         txtViewQuestion = findViewById(R.id.question_txt_view);
@@ -49,6 +50,21 @@ public class QuizActivity extends AppCompatActivity {
         //Call method timeLimiter.
         timeLimiter(60, txtViewTimer);
 
+        btnExit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                exitActivity();
+
+            }
+        });
+
+
+
+    }
+
+    public void exitActivity() {
+        Intent intent = new Intent(this, PlayActivity.class);
+        startActivity(intent);
     }
 
     private void updateQuestion() {
@@ -266,7 +282,7 @@ public class QuizActivity extends AppCompatActivity {
                             }
                             //Else if answer is incorrect change it to red #EC0B43 and find the correct answer and change it to green #1B998B
                             else {
-                                Toast.makeText(getApplicationContext(),"Incorrect Answer",Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(),"Incorrect Answer!",Toast.LENGTH_SHORT).show();
                                 incorrect++;
                                 btnFour.setBackgroundColor(Color.parseColor("#EC0B43"));
 

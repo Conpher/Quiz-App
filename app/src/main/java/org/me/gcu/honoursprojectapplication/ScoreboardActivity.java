@@ -4,12 +4,17 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
+
+import com.google.firebase.auth.FirebaseAuth;
 
 public class ScoreboardActivity extends AppCompatActivity {
 
     //Initialise TextView object.
     TextView txtViewTotalQues, txtViewCorrectAns, txtViewIncorrectAns;
+    Button btnExit, btnSignOut;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +24,8 @@ public class ScoreboardActivity extends AppCompatActivity {
         txtViewTotalQues = (TextView) findViewById(R.id.total_question_txt_view);
         txtViewCorrectAns = (TextView) findViewById(R.id.correct_answers_txt_view);
         txtViewIncorrectAns = (TextView) findViewById(R.id.incorrect_answers_txt_view);
+        btnExit = (Button) findViewById(R.id.exit_scoreboard_btn);
+        btnSignOut = (Button) findViewById(R.id.sign_out_scoreboard_btn);
 
         //Start new intent for getting scoreboardActivity.
         Intent newIntent = getIntent();
@@ -32,5 +39,26 @@ public class ScoreboardActivity extends AppCompatActivity {
         txtViewTotalQues.setText(totalQuestions);
         txtViewCorrectAns.setText(correctAns);
         txtViewIncorrectAns.setText(incorrectAns);
+
+        //Exit (go back) button.
+        btnExit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ScoreboardActivity.this, PlayActivity.class);
+                finish();
+                startActivity(intent);
+
+            }
+        });
+
+        //Sign-out button.
+        btnSignOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth.getInstance().signOut();
+                finish();
+                startActivity(new Intent(ScoreboardActivity.this, MainActivity.class));
+            }
+        });
     }
 }
