@@ -52,7 +52,7 @@
         </Button>
 
         <Button
-            android:id="@+id/signOutBtn"
+            android:id="@+id/sign_out_btn"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@drawable/shape_btn_confirm"

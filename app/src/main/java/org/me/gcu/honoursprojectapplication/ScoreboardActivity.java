@@ -14,7 +14,7 @@ public class ScoreboardActivity extends AppCompatActivity {
 
     //Initialise TextView object.
     TextView txtViewTotalQues, txtViewCorrectAns, txtViewIncorrectAns;
-    Button btnExit, btnSignOut;
+    Button btnExit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +25,6 @@ public class ScoreboardActivity extends AppCompatActivity {
         txtViewCorrectAns = (TextView) findViewById(R.id.correct_answers_txt_view);
         txtViewIncorrectAns = (TextView) findViewById(R.id.incorrect_answers_txt_view);
         btnExit = (Button) findViewById(R.id.exit_scoreboard_btn);
-        btnSignOut = (Button) findViewById(R.id.sign_out_scoreboard_btn);
 
         //Start new intent for getting scoreboardActivity.
         Intent newIntent = getIntent();
@@ -48,16 +47,6 @@ public class ScoreboardActivity extends AppCompatActivity {
                 finish();
                 startActivity(intent);
 
-            }
-        });
-
-        //Sign-out button.
-        btnSignOut.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FirebaseAuth.getInstance().signOut();
-                finish();
-                startActivity(new Intent(ScoreboardActivity.this, MainActivity.class));
             }
         });
     }

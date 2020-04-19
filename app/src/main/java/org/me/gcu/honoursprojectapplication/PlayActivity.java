@@ -6,15 +6,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 
 public class PlayActivity extends AppCompatActivity {
 
-    Button btnPlay, btnSignOut;
-    TextView textViewForgotPwd;
+    Button btnPlay, btnLogout;
     FirebaseAuth mAuth;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +22,9 @@ public class PlayActivity extends AppCompatActivity {
 
 
         btnPlay = findViewById(R.id.play_btn);
-        btnSignOut = findViewById(R.id.exit_quiz_btn);
+        btnLogout = findViewById(R.id.sign_out_btn);
+
+        mAuth = FirebaseAuth.getInstance();
 
 
         //Play button.
@@ -33,6 +34,15 @@ public class PlayActivity extends AppCompatActivity {
                 Intent intent = new Intent(PlayActivity.this, QuizActivity.class);
                 finish();
                 startActivity(intent);
+            }
+        });
+
+        btnLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth.getInstance().signOut();
+                finish();
+                startActivity(new Intent(PlayActivity.this, MainActivity.class));
             }
         });
     }
