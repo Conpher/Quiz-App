@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         inputMail = (EditText) findViewById(R.id.email);
         inputPwd = (EditText) findViewById(R.id.password);
         btnLogin = (Button) findViewById(R.id.sign_up_btn);
-        txtViewSignUp = (TextView) findViewById(R.id.sign_up_txt);
+        txtViewSignUp = (TextView) findViewById(R.id.login_txt);
 
         mAuth = FirebaseAuth.getInstance();
 

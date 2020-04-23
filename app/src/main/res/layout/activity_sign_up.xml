@@ -1,92 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:theme="@android:style/Theme.Holo.NoActionBar"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingLeft="50dp"
+    android:paddingRight="50dp"
     android:orientation="vertical"
     android:background="@color/radiant_red"
     tools:context=".SignUpActivity">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="350dp">
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="50dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentBottom="true"
-            android:src="@drawable/quizzard_logo" />
-    </RelativeLayout>
-
-    <LinearLayout
+    <ImageView
+        android:id="@+id/quiz_logo_sign_up"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingRight="50dp"
-        android:paddingLeft="50dp"
-        android:orientation="vertical">
+        android:layout_above="@+id/email"
+        android:layout_marginTop="16dp"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/quizzard_logo">
+    </ImageView>
 
-        <EditText
-            android:id="@+id/email"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:paddingStart="10dp"
-            android:maxLines="1"
-            android:singleLine="true"
-            android:textColorHint="@color/white"
-            android:textColor="@color/white"
-            android:hint="@string/hint_email"
-            android:inputType="textEmailAddress"
-            android:background="@drawable/shape_edit_text"/>
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_above="@id/password"
+        android:layout_marginBottom="16dp"
+        android:paddingStart="10dp"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
+        android:hint="@string/hint_email"
+        android:inputType="textEmailAddress"
+        android:background="@drawable/shape_edit_text">
+    </EditText>
 
-        <EditText
-            android:id="@+id/password"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:paddingStart="10dp"
-            android:layout_marginTop="15dp"
-            android:maxLines="1"
-            android:singleLine="true"
-            android:textColorHint="@color/white"
-            android:textColor="@color/white"
-            android:hint="@string/hint_password"
-            android:inputType="textPassword"
-            android:background="@drawable/shape_edit_text"/>
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_above="@+id/sign_up_btn"
+        android:layout_marginBottom="32dp"
+        android:paddingStart="10dp"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
+        android:hint="@string/hint_password"
+        android:inputType="textPassword"
+        android:background="@drawable/shape_edit_text"/>
 
-        <Button
-            android:id="@+id/sign_up_btn"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="50dp"
-            android:background="@drawable/shape_btn_confirm"
-            android:text="@string/btn_sign_up"
-            android:textColor="@color/raisin_black"/>
+    <Button
+        android:id="@+id/sign_up_btn"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_above="@+id/login_txt"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/shape_btn_confirm"
+        android:text="@string/btn_sign_up"
+        android:textColor="@color/raisin_black">
+    </Button>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:orientation="vertical"
-            android:gravity="center">
 
-            <TextView
-                android:id="@+id/login_txt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/raisin_black"
-                android:background="@android:color/transparent"
-                android:textAllCaps="false"
-                android:text="@string/txt_link_login"/>
+    <TextView
+        android:id="@+id/login_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="32dp"
+        android:textColor="@color/raisin_black"
+        android:background="@android:color/transparent"
+        android:textAllCaps="false"
+        android:text="@string/txt_link_login">
+    </TextView>
 
-        </LinearLayout>
-        <ProgressBar
-            android:id="@+id/progressBar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:visibility="gone"/>
-    </LinearLayout>
-</LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:visibility="gone">
+    </ProgressBar>
+</RelativeLayout>

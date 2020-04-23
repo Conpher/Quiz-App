@@ -1,125 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingLeft="50dp"
+    android:paddingRight="50dp"
     android:orientation="vertical"
     android:background="@color/radiant_red"
     tools:context=".ScoreboardActivity">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="350dp">
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="50dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentBottom="true"
-
-            android:src="@drawable/quizzard_logo" />
-    </RelativeLayout>
-
-    <LinearLayout
+    <ImageView
+        android:id="@+id/quiz_logo_sb"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:orientation="horizontal"
-        android:paddingLeft="50dp"
-        android:paddingRight="50dp">
+        android:layout_above="@+id/txt_total_questions_title"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:src="@drawable/quizzard_logo">
+    </ImageView>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/txt_view_total_questions"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            android:textSize="20dp">
-        </TextView>
-
-        <TextView
-            android:id="@+id/total_question_txt_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="100dp"
-            android:text="A"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            android:textSize="20dp">
-        </TextView>
-    </LinearLayout>
-
-    <LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:paddingLeft="50dp"
-    android:paddingRight="50dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/txt_view_correct_answers"
-            android:layout_marginTop="10dp"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            android:textSize="20dp">
-        </TextView>
-
-        <TextView
-            android:id="@+id/correct_answers_txt_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="93dp"
-            android:layout_marginTop="10dp"
-            android:text="B"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            android:textSize="20dp">
-        </TextView>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/txt_total_questions_title"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingLeft="50dp"
-        android:paddingRight="50dp">
+        android:layout_above="@+id/txt_correct_answers_title"
+        android:layout_marginTop="16dp"
+        android:text="@string/txt_view_total_questions"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="15sp">
+    </TextView>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/txt_view_incorrect_answers"
-            android:layout_marginTop="10dp"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            android:textSize="20dp">
-        </TextView>
+    <TextView
+        android:id="@+id/txt_total_questions_answered"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/txt_total_correct_answers"
+        android:layout_toRightOf="@+id/txt_total_questions_title"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:text="@string/txt_view_no_questions"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="15sp">
+    </TextView>
 
-        <TextView
-            android:id="@+id/incorrect_answers_txt_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="78dp"
-            android:layout_marginTop="10dp"
-            android:text="C"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            android:textSize="20dp">
-        </TextView>
-    </LinearLayout>
+    <TextView
+        android:id="@+id/txt_correct_answers_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/txt_incorrect_answers_title"
+        android:text="@string/txt_view_correct_answers"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="15sp">
+    </TextView>
+
+    <TextView
+        android:id="@+id/txt_total_correct_answers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/txt_total_incorrect_answers"
+        android:layout_toRightOf="@+id/txt_correct_answers_title"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/txt_view_no_correct_ans"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="15sp">
+    </TextView>
+
+
+    <TextView
+        android:id="@+id/txt_incorrect_answers_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/exit_scoreboard_btn"
+        android:text="@string/txt_view_incorrect_answers"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="50dp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="15sp">
+    </TextView>
+
+    <TextView
+        android:id="@+id/txt_total_incorrect_answers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/exit_scoreboard_btn"
+        android:layout_toRightOf="@+id/txt_incorrect_answers_title"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="50dp"
+        android:text="@string/txt_view_no_incorrect_ans"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="15sp">
+    </TextView>
 
     <Button
         android:id="@+id/exit_scoreboard_btn"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"
-        android:layout_marginTop="50dp"
-        android:background="@drawable/shape_btn_confirm_blue"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="32dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/shape_btn_confirm"
         android:text="@string/btn_exit"
         android:textColor="@color/raisin_black">
     </Button>
-</LinearLayout>
+</RelativeLayout>

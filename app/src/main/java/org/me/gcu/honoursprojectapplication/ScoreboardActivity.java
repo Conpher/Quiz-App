@@ -8,8 +8,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.google.firebase.auth.FirebaseAuth;
-
 public class ScoreboardActivity extends AppCompatActivity {
 
     //Initialise TextView object.
@@ -21,9 +19,9 @@ public class ScoreboardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scoreboard);
         //Initialise each variable and link with XML.
-        txtViewTotalQues = (TextView) findViewById(R.id.total_question_txt_view);
-        txtViewCorrectAns = (TextView) findViewById(R.id.correct_answers_txt_view);
-        txtViewIncorrectAns = (TextView) findViewById(R.id.incorrect_answers_txt_view);
+        txtViewTotalQues = (TextView) findViewById(R.id.txt_total_questions_answered);
+        txtViewCorrectAns = (TextView) findViewById(R.id.txt_total_correct_answers);
+        txtViewIncorrectAns = (TextView) findViewById(R.id.txt_total_incorrect_answers);
         btnExit = (Button) findViewById(R.id.exit_scoreboard_btn);
 
         //Start new intent for getting scoreboardActivity.
