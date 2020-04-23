@@ -12,8 +12,18 @@
     <string name="btn_back"><![CDATA[<< Back]]></string>
     <string name="btn_sign_out">Sign-Out</string>
     <string name="btn_play">PLAY!</string>
-    <string name="txt_view_welcome">Welcome to Quizzard! Please hit the Play Button to start the Quiz:</string>
-    <string name="txt_view_pwd_reset">Reset Password?</string>
+    <string name="txt_view_welcome">Welcome to Quizzard!</string>
+    <string name="txt_view_play"></string>
     <string name="txt_view_question_placement">This is where the question will be placed. Answer by pressing one of the buttons below:</string>
+    <string name="answer_one">A</string>
+    <string name="answer_two">B</string>
+    <string name="answer_three">C</string>
+    <string name="answer_four">D</string>
     <string name="btn_exit">EXIT</string>
+    <string name="txt_view_total_questions">Total Questions:</string>
+    <string name="txt_view_correct_answers">Correct Answers:</string>
+    <string name="txt_view_incorrect_answers">Incorrect Answers:</string>
+    <string name="txt_view_no_questions">A</string>
+    <string name="txt_view_no_correct_ans">B</string>
+    <string name="txt_view_no_incorrect_ans">C</string>
 </resources>
